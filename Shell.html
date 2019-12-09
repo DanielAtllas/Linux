@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>Shell Linux</title>
+        <meta name="description" content="Este é um site referente à estudos sobre shell/bash LINUX.">
+    </head>
+    <body>
+        <h1> Shell e Seus Comandos</h1>
+        <p>O shell é a <strong>interface entre o usuário e o kernel</strong>, onde o bash é aplicado. Ou seja, é o <strong>local que recebe e executa as instruções de comando da interface</strong>, através de linhas de comando. Em outras palavras, nada mais é do que o CMD/Prompt de comando do Linux, onde para seu acesso, por padrão, a maioria das interfaces gráficas do linux possuem um "emulador" do shell, iniciado após apertar o botão direito e clicar na opção de <strong>open terminal</strong>.</p>
+        <p>No primeiro acesso ao shell, é possível a identificação do identificador da máquina, onde é apresentado como <i>NomeUsuário@NomeMáquina</i></p>
+        <ul>
+            <li><strong>Comandos no SHELL</strong></li>
+                <p>Primeiramente, é preciso atentar-se na forma da escrita de cada comando ou diretório, pois o shell apresenta a configuração de <i>case sensitive</i>, onde a escrita maiúscula se difere da minúscula, mesmo que a palavra seja a mesma. Além disso, caso o usuário venha a digitar um comando errado ou não existente, uma mensagem <strong>comand not found</strong> será exibida. Assim como um comando muito utilizado no Linux, é o <strong>nome do comando seguido pelo --help</strong>, isso irá exibir todos os subcomandos dentro do comando que o usuário deseja, além das informações do mesmo, como o que esse comando faz e o que os subcomandos fazem.</p>
+                <ol>
+                    <strong><li>Comandos básicos</li></strong>
+                    <ul>
+                        <br>
+                    <li><strong>Tendo total liberdade</strong></li>
+                        <p>Além o usuário inicial, é possível se tornar um usuário <strong>ROOT</strong>, que é o <strong>administrador do sistema</strong>. Através dos comandos <i>sudo su -</i>, o qual possui toda e inteiramente permissão dentro do sistema Linux. Em outras palavras, o usuário ROOT é a permissão mais alta dentro do sistema inteiro. Além disso, por ser uma ferramenta tão poderosa, recomenda-se que o usuário se torne root <strong>apenas quando necessário</strong>.</p>
+                        <pre>
+            <strong>sudo su -</strong>    ou	<strong>su</strong>	ou    <strong>su -</strong>
+                        </pre>
+                    <li><strong>Voltando para o usuário anterior</strong></li>
+                        <p>No Linux, é muito comum a alternância entre usuários e é muito possível que se queira retornar ao usuário utilizado anteriormente. Para isso, através da tecla <i>ctrl D</i> ou do comando <i>exit</i>, o shell força o sistema operacional a retornar ao usuário anterior.</p>
+                        <pre>
+            <strong>CTRL + D</strong>  ou	<strong>exit</strong>
+                        </pre>
+                    <li><strong>Identificação da máquina</strong></li>
+                        <p>Este é o comando que irá exibir o nome da máquina.</p>
+                        <pre>
+            <strong>hostname</strong>
+                        </pre>
+                    <li><strong>Limpagem de tela</strong></li>
+                        <p>Caso o shell esteja completamente cheio de registros e comandos, uma sensação de poluição visual pode ser gerado. Para isso, usa-se o comando <i>clear</i> que irá "limpar a tela".</p>
+                        <pre>
+            <strong>clear</strong>
+                        </pre>
+                        </ul>
+                    <strong><li>Estrutura de diretórios</li></strong>
+                    <p>O diretório base de todo o Linux é o diretório <strong>/</strong> ou <i>barra</i>, sendo que todos os outros estão dentro dele. Entre os principais diretórios, estão o <strong>BIN</strong> (localização dos programas) e o <strong>HOME</strong> (Localização dos usuários)</p>
+                    <p>Para se navegar etre os diretórios, é utilizado um comando, forçando o sistema a inserir o usuário dentro do diretório descrito. Também é possível que o usuário saiba em qual diretório está presente atualmente.</p>
+                    <ul>
+                        <li><strong>Criação de um diretório</strong></li>
+                            <p>A criação de diretórios é algo essêncial em um sistema operacional e no Linux não é diferente, onde para se criar um diretório, é dado o comando <i>mkdir</i>. Há também as variações do comando, como por exemplo a criação de um diretório dentro de outro em que o usuário não esta presente, dado pelo comando <strong>mkdir diretorio01/diretorio02</strong>, ou a criação de um diretório em um diretório ainda não criado, pelo comando <strong>mkdir -p diretorio01/diretorio02</strong></p>
+                            <pre>
+            <strong>mkdir</strong> <i>nome</i>
+                            </pre>
+                        <li><strong>Navegação entre diretórios</strong></li>
+                            <p>Através do comando <i>cd</i> o sistema força o usuário a entrar no diretório especificado, sendo que basta inserir o nome ou a direção em que tal diretório se encontra. Além disso, sua variação <strong>cd..</strong> irá fazer com que o usuário retorne ao diretório anterior.</p>
+                            <pre>
+            <strong>cd</strong> <i>diretorio</i>
+                            </pre>
+                        <li><strong>Localização do usuário</strong></li>
+                            <p>Pelo comando <i>pwd</i>, o shell indicará em qual diretório o usuário se encontra atualmente, exibindo todo o caminho do diretório.</p>
+                            <pre>
+            <strong>pwd</strong>
+                            </pre>
+                        <li><strong>Exibição dos arquivos do diretório</strong></li>
+                            <p>O comando <i>ls</i> faz com que o shell exiba todos os diretórios e arquivos presentes em tal diretório de forma detalhada. Possui também variações, como por exemplo o comando <strong>ls -a</strong> que exibe arquivos ocultos.</p>
+                            <pre>
+            <strong>ls -lh</strong>
+                            </pre>
+                        <li><strong>Deletar um diretório</strong></li>
+                            <p>Assim como também é possível excluir um diretório através do comando <i>rm</i> ou excluir um arquivo.</p>
+                            <pre>
+            <strong>rm -r</strong>
+                            </pre>
+                        <li><strong>Copiar um arquivo/diretório</strong></li>
+                            <p>Este comando faz a cópia de um arquivo ou diretório e o coloca no mesmo diretório em que ele se encontra. Ou seja, no mesmo diretório estaão tanto o arquivo/diretório original como a sua cópia.</p>
+                            <pre>
+            <strong>cp</strong> <i>arquivo</i> <i>cópia</i>   ou   <strong>cp -r</strong> <i>diretório cópia</i>
+                            </pre>
+                        <li><strong>Copiar um arquivo/diretório para outro diretório</strong></li>
+                            <p>Seguindo a mesma ideia do comando acima, porém com a diferença que o arquivo/diretório original estará em um diretório e a sua cópia em outro diferente.</p>
+                            <pre>
+            <strong>cp</strong> <i>arquivo</i><strong>/</strong><i>diretorioFinal</i>   ou   <strong>cp -r</strong> <i>diretorio</i><strong>/</strong><i>diretorioFinal</i>
+                            </pre>
+                        <li><strong>Mover um arquivo/diretório para outro diretório</strong></li>
+                            <p>Seguindo atambém o mesmo raciocínio do comando acima, com a diferença de que não será criado uma cópia do arquivo/diretório, mas sim irá move-lo de um diretório para outro.</p>
+                            <pre>
+            <strong>mv</strong> <i>arquivoOUdiretorio</i><strong>/</strong><i>diretorioFinal</i>
+                            </pre>
+                        <li><strong>Renomear um arquivo/diretório</strong></li>
+                            <p>Perceba que os comandos são muito semelhantes, porém com a barra sendo retirada, dessa forma o arquivo será renomeado para um novo nome.</p>
+                            <pre>
+            <strong>mv</strong> <i>arquivoOUdiretorio novoNome</i>
+                            </pre>
+                        <li><strong>Busca por arquivo/diretório</strong></li>
+                            <p>Através do comando <strong>find</strong>, seguido pelo comando de pesquisa, pelo diretório e o nome do arquivo, o Linux fará uma busca do mesmo. Para uma busca completa, pode-se usar o diretório <strong>/</strong> ou "barra", porém exige muito processamento.</p>
+                            <p><strong>OBS: Existem vários tipos de comandos de pesquisa, omo o <strong><i>-name</i></strong> que pesquisará pelo nome do arquivo. Para saber mais comandos, utilize do <strong><i>find --help</i></strong></strong></p>
+                            <pre>
+            <strong>find</strong> <i>diretorio</i> <strong>-name</strong> <i>nomeDoArquivo</i>
+                            </pre>
+                    </ul>
+                    <strong><li>File Globbing</li></strong>
+                        <p>Nada mais são do que comandos que simplificam o resultado de uma grande operação, como por exemplo, imagine que existem 500000 arquivos e você precisa dos que começam com a letra A. Para que não precise pesquisar um por um, basta dar um dos comandos file globbing. Sendo entre eles, os principais:</p>
+                        <ul>
+                            <li><strong>*</strong></li>
+                                <p>É utilizado para mostrar todos os registros que tiverem tal exibição, por exemplo para exibir todos os registros que começam com Aula - Aula01/Aula02...AulaN:</p>
+                                <pre>
+                <strong>ls -l</strong> <i>Aula</i><strong>*</strong>
+                                </pre>
+                            <li><strong>[]</strong></li>
+                                <p>É utilizado para exibir registros dentro de um conjunto, por exemplo para exibir todos os registros que estão entre as aulas com o range 1-5</p>
+                                <pre>
+                <strong>ls -l</strong> <i>Aula</i> <strong>[1-5]</strong>
+                                </pre>
+                            <li><strong>?</strong></li>
+                                <p>Exibe os registros com apenas um caracter, por exemplo exibir todos os registros que contêm aula e com apenas um caracter após a palavra:</p>
+                                <pre>
+                <strong>ls -l</strong> <i>Aula</i><strong>?</strong>
+                                </pre>
+                        </ul>
+                    <strong><li>Editores de Texto</li></strong>
+                    <p>Existem inúmeras formas de arquivos TxT no Sistema Operacional, alguns com interface gráfica dinâmica e outros realizados e escritos diretos pelo bash e shell. É possivel, de forma mais bruta, inserir algum texto diretamente em um arquivo em questão, através do comando <strong>>></strong>, da seguinte forma:</p>
+                    <pre>
+                <strong>echo</strong> <i>texto</i> <strong>>></strong> <i>arquivo</i>
+                    </pre>
+                    <p>Porém, o jeito mais fácil de se fazer um arquivo de texto, é através dos próprios editores de texto, pois assim, pode-se criar o arquivo, inserir dados, dar comandos ou navegar dentro do texto. Dentre eles, o mais usado é o <strong>VI</strong>, sendo um arquivo do tipo texto criado pelo usuário no próprio shell.</p>
+                    <p>Para criar um arquivo <i>VI</i> basta colocar o prefixo <strong>VI</strong> seguido pelo nome que deseja do arquivo (Assim como, para abrir o arquivo em questão, o comando dado é exatamente o mesmo.):</p>
+                    <pre>
+                <strong>vi</strong> <i>arquivo</i>
+                    </pre>
+                    <p>O fato de este ter a maior quantidade de usuários, é por simplesmente ser um tipo de manipulação de arquivo extremamente completo, tendo um modo de navegação dentro do texto e inserção de dados ou comandos.</p>
+                    <ul>
+                        <li><strong>Navegação</strong></li>
+                        <p>Ao entrar no VI, o usuário se encontra no modo de <strong>navegação</strong>, podendo dar o comando <strong>/</strong> para pesquisar alguma string no texto.</p>
+                        <li><strong>Inserção</strong></li>
+                        <p>No modo de inserção, é possível inserir todo o texto no arquivo da forma que desejar, deixando livre ao usuário inserir os dados que quiser.</p>
+                        <li><strong>Comandos</strong></li>
+                        <p>Com o arquivo aberto, é possível <strong>salvar ou sair</strong> do arquivo (sair sem salvar), para isso, é apertado a tecla <strong>esc + : + </strong><i>comando</i>. Onde o comando <strong>wq</strong> irá salvar as alterações realizadas no arquivo e o comando <strong>q!</strong> irá ignorar as alterações realizadas e fechar o arquivo.</p>
+                    </ul>
+                    <p>Para mudar de modo no VI, após abrir o arquivo, basta apertar a tecla <strong>esc</strong> e inserir o comando do modo, sendo eles:</p>
+                    <pre>
+                1 - Navegação = <strong>/</strong><i>caracter</i>
+                
+                2 - Inserção = <strong>esc + i + enter</strong>
+                
+                3 - Comando = <strong>esc + :</strong><i>comando</i>
+                    </pre>
+                </ol>
+            <li><strong>Leitura de arquivo TxT</strong></li>
+                <p>Pelo comando <strong>less</strong>, é possível exibir, pelo shell, qualquer texto presente em qualquer arquivo de forma apenas de leitura, ou seja, o texto será apenas exibido para visualizar (sem possibilidade de modificações). Além disso, é possível também fazer pesquisas dentro do texto (pesquisar por frases desejadas, por exemplo).</p>
+                <p><strong>OBS: Existem outros comandos para a leitura de texto, porém, recomenda-se o less pelo seu poder de pesquisa).</strong></p>
+                <pre>
+            1 - Exibir o texto = <strong>less</strong> <i>arquivo</i>
+            
+            2 - Movimentar-se dentro do texto = <strong>seta para cima/baixo ou PgUp/PgDn</strong> no teclado.
+            
+            3 - Localização de específicos = <strong>/</strong><i>pesquisa</i>
+            
+            4 - Sair do texto = <strong>q</strong>
+                </pre>
+            <li><strong>Tratamento de arquivos TxT</strong></li>
+                <p>Há a possibilidade de descobirir a <strong>quantidade de linhas, palavras e caracteres</strong> (nessa ordem) presentes no arquivo em questão. Para isso, é usado o comando:</p>
+                <pre>
+            <strong>wc</strong><i>arquivo</i>
+                </pre>
+                <p>Sendo também possivel <strong>ordenar</strong> as linhas de um texto, seja em ordem alfabética ou numérica, através do comando:</p>
+                <pre>
+            1 - Ordem Crescente = <strong>sort</strong> <i>arquivo</i>
+            
+            2 - Ordem Descrescente = <strong>sort -r</strong> <i>arquivo</i>
+            
+            3 - Eliminar Duplicatas = <strong>sort -u</strong> <i>arquivo</i>
+                
+            4 - Exibir somente duplicatas = <strong>uniq -d</strong> <i>arquivo</i>    
+                </pre>
+            <p>Além disso, há a opção de exibição dos caracteres por um range, usando o comando <strong>cut</strong> (funcionando como um <i>substring</i> no SQL):</p>
+            <pre>
+        1 - De N até N = <strong>cut -c</strong> <i>Nº</i><strong>-</strong><i>Nº</i>
+        
+        2 - Começando por N = <strong>cut -c- </strong><i>Nº</i>
+        
+        3 - Até o N = <strong>cut -c </strong><i>Nº</i><strong>-</strong>
+            </pre>
+            <li><strong>Filtração/pesquisa de string</strong></li>
+                <p>É possível localizar uma string em qualquer arquivo direto pelo shell, fazendo-o exibir toda a linha em que a string se encontra, pelo comando:</p>
+                <pre>
+        1 - Pesquisa Comum = <strong>grep</strong> <i>string arquivo</i>
+        
+        2 - Quantidade de vezes que a string aparece = <strong>grep -c </strong><i>string arquivo</i>
+        
+        3 - Linhas que não contêm a string em questão = <strong>grep -v</strong> <i>string arquivo</i>
+                </pre>
+            <li><strong>Uso do pipeline</strong></li>
+                <p>O <storng>pipe</storng> é usado para concatenar comandos, ou seja, unir comando em uma só exibição:</p>
+                <pre>
+            <i>comando</i><strong>|</strong><i>comando2</i>
+                </pre>
+            <li><strong>Processos</strong></li>
+                <p>Algo presente em todo sistema operacional, é o sistema de processos, os quais executam softwares dentro do Sistema Operacional. O <i>Google Chrome</i> é um exemplo desses processos, assim como qualquer outro "programa" em execução. Dito isso, através do shell, é possível manipular esses processos, seja executando ou até mesmo matando-os.</p>
+                <p>Para isso, é preciso saber o PID de cada processos, informação essa que pode ser obtida pelos comandos:</p>
+                <pre>
+            <strong>pgrep</strong> <i>processos</i>
+            
+            ou
+            
+            <strong>ps -ef |grep</strong> <i>processo</i>
+                </pre>
+                <p>Também é possível exibir informações mais completas sobre esse processo, como sua PID, seu nome e etx. Através do comando <strong>ps -axu</strong>, onde todos os precessos existentes serão exibidos, mesmo os de usuário e os de root:</p>
+                <pre>
+                <strong>ps -axu</strong>
+                
+                ou
+                
+                <strong>top</strong> (como user root)
+                </pre>
+                <p>O comando mais usado em um processo, é o <strong>kill</strong>, usado quando um processo está travado e o usuário deseha fecha-lo a força, em outras palavras, é um comando para matar processos e fecha-los imediatamente independente das circustâncias:</p>
+                <p><strong>OBS: É possível listar todos os sinais do kill, pelo comando "kill -l", sendo o <strong>-9</strong> o mais usado.</strong></p>
+                <pre>
+            <strong>kill -</strong><i>sinal</i> <i>PID Processo</i>
+                </pre>
+            <li><strong>Uso da memória</strong></li>
+                <p>É executável também, a exibição de informações da memória e do sistema através do shell, pelos comandos <strong>free</strong> e <strong>uname</strong>, exibindo o total de memória usada, disponível(avaible) e etc. Porém, para executar tais comandos, é preciso ser um user root.</p>
+                <pre>
+            1 - Inf. Memória = <strong>free -h</strong>
+            
+            2 - Inf. Sistema = <strong>uname -a</strong>
+                </pre>
+            <li><strong>Pacotes e aplicações</strong></li>
+                <p>Pacotes e aplicações, nada mais são do que softwares que o usuário baixa na internet, instalando-os em sua máquina/Sistema Operacional. É possível instala-los e/ou desinstala-los diretamente, ou pelo shell.</p>
+                <p>Nas distribuições <i>DEBIAN</i>, usa-se o comando <Strong>apt-get</Strong>:</p>
+                <pre>
+            1 - Instalar = <strong>apt-get install</strong> <i>pacote</i>
+            
+            2 - Desinstalar = <Strong>apt-get remove</Strong> <i>pacote</i>
+            
+            3 - Atualizar = <strong>apt-get update</strong> <i>pacote</i>
+                </pre>
+                <p>Já nas distribuições <i>RED HAT</i>, usa-se o comando <strong>yum</strong>:</p>
+                <pre>
+            1 - Instalar = <strong>yum install</strong> <i>pacote</i>
+            
+            2 - Desinstalar = <strong>yum remove</strong> <i>pacote</i>
+            
+            3 - Atualizar = <strong>yum update</strong> <i>pacote</i>
+                </pre>
+            
+            <li><strong>Reiniciando/Desligando o sistema operacional/máquina</strong></li>
+                <p>Obviamente é possível desligar o sistema op./máquina pela interface gráfica, porém, através do shell, também é possível realizar tal ação. O comando <strong>poweroff</strong> desligará o sistema op./máquina, já o comando <stong>reboot</stong> irpa reiniciar o sistema/máquina, ou até mesmo pelo comando <strong>shutdown</strong> que programa o sistma/máquina para desligar em um horário definido pelo usuário:</p>
+                <pre>
+                1 - Desligar = <strong>poweroff</strong>
+                
+                2 - Reiniciar = <strong>reboot</strong>
+                
+                3 - Programar Desligamento = <strong>shutdown</strong> <i>hora</i>
+                </pre>
+        </ul>
+    </body>
+</html>
