@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>Exercicios</title>
+        <meta name="description" content="Este é um site referente à estudos sobre o sistema operacional LINUX e suas distribuições.">
+    </head>
+    <body>
+        <h1>Exercicios - Linux</h1>
+        <p> Este é um site referente à estudos sobre o <strong>sistema operacional LINUX e suas distribuições</strong>.</p>
+        <ol>
+            <strong><li>Obtenha as seguintes informações do seu sistema:</li></strong>
+            <ul>
+                <li> Porcentagem de espaço em disco utlizado na sua partição raiz</li>
+                <li> Total de memória livre disponível para uso (em MB)</li>
+                <li> PID dos 3 processos que estço utlizando mais Memória</li>
+                <li> Há quantas horas/dias o sistema está ativo</li>
+                <li> A versão do kernel utlizado</li>
+            </ul>
+            <br>
+            <strong><li>Identfque nos logs do boot do sistema, o nome do arquivo da imagem do kernel
+        utlizado, normalmente indicado após a string BOOT_IMAGE</li></strong>
+            <br>
+            <strong><li>Considerando uma distribuiçço com gerenciador de pacotes padrço Debian, qual comando deve ser utliiado para instalar remover completamente o mysql-client. O comando deve faier o download e instalar automatcamente todas as dependência do pacote.</li></strong>
+            <br>
+            <strong><li>Faça o mesmo procedimento do exercício 3 em uma distribuiçço com gerenciador de pacotes RPM.</li></strong>
+            <br>
+            <strong><li>Quais comandos podem ser utliiados para verifcar se o pacote "ksh" está instalado, tanto no padrço Debain quanto no RedHat</li></strong>
+            <br>
+            <strong><li>Crie o usuário aluno1, incluindo a criaçço de seu diretório no /home, defna seu nome como "comentário/nome completo" e defna alguma senha para ele.</li></strong>
+            <br>
+            <strong><li>Remova o usuário aluno1, incluindo seu diretório no /home</li></strong>
+            <br>
+            <strong><li>Crie o arquivo MxercicioPermissao com as seguintes permissões, os donos podem ser seus próprios usuários:
+                -rwxr-xr-- 1 ricardo ricardo 0 nov 7 15:20 MxercicioPermissao </li></strong>
+            <br>
+            <strong><li>Gere um comando que mostre a quantdade de processos em execução no momento. Considere os processos de todos os usuários em todos os terminais.</li></strong>
+            <br>
+            <strong><li>Identfque o PID e o usuário dono do processo susrssbinsrssslogd.</li></strong>
+            <br>
+            <strong><li>Execute um comando que mostre apenas o PID do processo NetworkManager, caso exista.</li></strong>
+            <br>
+            <strong><li>Execute o comando "tail -f svarslogsssslog > ~snovolog.txt" em background.</li></strong>
+            <br>
+            <strong><li>Mate o processo gerado pelo comando do exercício acima.</li></strong>
+            <br>
+            <strong><li>O cron é um serviço do Linux que possibilita a execução agendada de tarefas. utliziando os comandos de gerenciamento de serviços do ssstemd, verifque se o serviço está ou não atvo e o reinicie, ou apenas inicie caso não esteja em execução</li></strong>
+            <br>
+            <strong><li>Execute um comando que gere um arquivo chamado usuarios.txt contendo as últmas 5 linhas do arquivo /etc/passwd</li></strong>
+            <br>
+            <strong><li>O arquivo /etc/shells contém os shells instalados em seu sistema. Execute um comando que mostre esses shells em ordem alfabétca, excluindo a linha com comentário.</li></strong>
+            <br>
+            <strong><li>Conte a quantdade de linhas do arquivos /etc/passwd</li></strong>
+            <br>
+            <strong><li>Crie um comando que mostre quantas vezes o nome de seu usuário aparece no arquivo /etc/group </li></strong>
+            <br>
+            <strong><li>Escreva um comando que mostre apenas o primeiro campo de cada linha do arquivo /etc/passwd</li></strong>
+            <br>
+            <strong><li>Usando o editor de texto nano ou vi, crie um pequeno texto com uma avaliação deste curso até agora. Salve o arquivo com o nome avaliacao.txt</li></strong>
+            <br>
+            <strong><li>Encontre as seguintes informações no seu ambiente SHELL
+                <ul>
+                <li> O valor da variável SHELL</li>
+                <li> O PID da sua sessão shell atual</li>
+                <li> A descrição do comando echo</li>
+                <li> A opção do comando echo que não faz uma quebra de linha após exibir o texto (do not output the trailing newline)</li>
+                </ul>
+            </li></strong>
+            <br>
+            <strong><li> Crie e exporte uma variável chamada "NOME" que contenha o seu nome completo.</li></strong>
+            <br>
+            <strong><li>Crie um comando que escreva na tela a seguinte frase: "O Nome do Aluno mais Aplicado deste Curso é: utlize a variável NOME"</li></strong>
+            <br>
+            <strong><li> Logue como usuário root e verifque o valor da variável HOME. Após verifcar volte à sessão do seu usuário normal.</li></strong>
+            <br>
+            <strong><li>No diretório home de seu usuário, crie um diretório chamado CursoLinux, dentro dele crie os diretórios Aulas, Exercicios e Provas.</li></strong>
+            <br>
+            <strong><li>Copie (não mova) todos os arquivos e diretórios existentes em /etc/network/ para HOME/CursoLinux/Exercicios/Network/</li></strong>
+            <br>
+            <strong><li>Copie todos os arquivos do diretório /etc, cujo nome termine com ".conf" para HOME/CursoLinux/Exercicios/Confg/.</li></strong>
+            <br>
+            <strong><li>Em HOME/CursoLinux/Exercicios, crie um arquivo chamado arquivos-cron.tgz, compactado com o gzip, contendo todos os arquivos e diretórios do /etc que contenham a palavra "cron" no nome.</li></strong>
+            <br>
+            <strong><li>Renomeie o arquivo arquivos-cron.tgz para backup-cron.tgz</li></strong>
+            <br>
+            <strong><li>Descompacte o conteúdo do arquivo backup-cron.tgz dentro do diretório HOME/CursoLinux/Exercicios/Descompactar/</li></strong>
+            <br>
+            <strong><li>No diretório ~/CursoLinux, crie um link simbólico chamado "Exames" que aponta para o diretório "Provas"</li></strong>
+            <br>
+            <strong><li>Encontre todos os arquivos do diretório /var, cujo nome termine com ".gz"</li></strong>
+            <br>
+            <strong><li>Encontre o caminho completo do comando "tar"</li></strong>
+        </ol>
+    </body>
+</html>
