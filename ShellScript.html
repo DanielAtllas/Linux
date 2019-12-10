@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>Shell Script</title>
+        <meta name="description" content="Este é um site referente à estudos sobre o shell script no LINUX e suas distribuições.">
+    </head>
+    <body>
+        <h1>Shell Script - Linux</h1>
+        <p>O shellScript é uma linguagem de programação destinada a usuários Linux, a qual é realizada por meio do próprio bash (geralmente em um arquivo do tipo Texto, como o VI), seguindo exatamente os mesmos princípios de qualquer outra linguagem de programação, além de poder mexer com arquivos que residem no mesmo sistema e demais.</p>
+        <ul>
+            <li><strong>Introdução</strong></li>
+                <p>Assim como em qualquer progamação, o linux também disponibiliza uma forma de se criar códigos através de sua linguagem própria, pelo shell. Dessa forma, a criação de programas pode ser dada diretamente através do linux e sua shell. Os scripts criados, são escritos através de alguma interface de editor de texto e para melhores casos/comuns, usa-se do <strong>VI</strong> para isso.</p>
+                <p>Primeiro, deve-se criar o programa no VI e setaá-lo com <strong>.sh</strong> (sendo este o formato de um programa executável). Depois disso, basta inserir o código no editor.</p>
+                <pre>
+            <strong>vi</strong> <i>programa</i><strong>.sh</strong>
+                </pre>
+                <p>Após o programa ser criado, para que o mesmo possa ser executado, é necessário que o usuário insira no mesmo o poder de execução. Para que o Linux possa compreende-lo como executável.</p>
+                <pre>
+            <strong>chmod +x </strong><i>programa</i>
+                </pre>
+                <p>Para exeucutar o programa, é dado o comando <strong>./</strong><i>programa</i> .Durante o momento de inserção do script, a primeira linha deve conter o código de diretório (sendo ele padrão para todo e qualquer script em shell), dado por: <strong>#!/bin/bash</strong></p>
+            <li><strong>Variáveis</strong></li>
+                <p>A declaração de variáveis é muito semelhante em linguagens de programação, onde é dado o nome e o seu registro, modo este que também pode ser usado no shell. Porém, há também uma outra forma no linux, no qual não é preciso criar uma variável da forma padrão, indicando seu tipo e nem precisando declarar a ela no começo do código. Para isso, basta inseri-la:</p>
+                <pre>
+            1 - Forma padrão = <i>variável</i> <strong>=</strong> <i>valor</i>
+            
+            2 - Forma direta = <strong>read</strong> <i>variável</i>
+                </pre>
+                <p>Ou seja, caso queira armazenar em uma variável um dado inserido pelo usuário, basta dar o comando <strong>read</strong> seguido pelo nome da variável, que a mesma será automaticamente criada e inserido nela o valor em questão, como no exemplo abaixo:</p>
+                <pre>
+            <strong>echo</strong> <i>"Insira o seu nome: "</i>
+            <strong>read</strong> <i>NOME</i>
+                </pre>
+                <p>Para chamar uma variável, é necessário o uso do <strong>$</strong> e de chaves. Diferencial esse exigido pela linguagem do shell:</p>
+                <pre>
+            <strong>echo "${</strong><i>variável</i><strong>}"</strong>
+                </pre>
+            <li><strong>Subshell</strong></li>
+                <p>É dada também, a possibilidade de execução de comandos linux dentro do programa, este processo é chamado de subshell, fazendo com que a execução desses comandos, sejam válidos apenas durante a execução do programa. Comandos esses como <strong>pwd, clear</strong> e etc.</p>
+                <p>Através do comando <strong>$()</strong> há a possibilidade de execução de comandos funcionais o Linux, como: <strong>hostname, uname -r</strong> e etc, que são comandos sobre a máquina.</p>
+                <pre>
+            <strong>echo "$(</strong><i>comando</i><strong>)"</strong>
+                </pre>
+            <li><strong>Condicionais</strong></li>
+                <p>Como é de conhecimento, o comando <strong>if</strong> é dado caso se queira dar alguma condição ao valor da variável ou looping. Para isso, o comando é dado dentro de 2 colchetes. Caso a variável em questão seja numérica, os sinais de igualdade são subistituiídos. Após a condição ser passada, deve ser registrado as condições de verdade e falsidade <strong>then e else</strong> além do fechamento da condicional, o <strong>fi</strong></p>
+                <pre>
+            <strong>if [[${</strong><i>variável</i><strong>}</strong> <i>sinal</i> <i>condição</i> <strong>]]</strong>
+            <strong>then</strong>
+                <i>.
+                .
+                .</i>
+            <strong>fi</strong>    
+                </pre>
+            <li><strong>Interrupção</strong></li>
+                <p>Outra função útil em algumas ocasições, é a paragem direta do programa. Sendo forçado a desligar.</p>
+                <pre>
+            <strong>systemctl stop httpd</strong>
+                </pre>
+            <li><strong>Loopings</strong></li>
+                <ol>
+                    <br>
+                    <strong><li>FOR</li></strong>
+                        <p>A cláusula <strong>for</strong> é usada quando se deseja repetir algo, ou uma instrução, uma quantidade N de vezes, ou seja, uma execução ficará em um looping até que seu ponto de paragem seja alcançado.</p>
+                        <pre>
+                <strong>for</strong> <i>variável</i> <strong>in {</strong><i>Vi</i>..<i>Vf</i><strong>}
+                do</strong>
+                    <i>instrução</i>
+                <strong>done</strong>    
+                        </pre>
+                    <br>
+                    <strong><li>WHILE</li></strong>
+                        <p>Outra forma de se criar um looping, é através do comando <strong>while</strong>, o qual i´ra repetir instruções ou comandos enquanto a condição não for satisfeita, dado por:</p>
+                        <pre>
+                <strong>while [[</strong><i>variável</i> <i>sinal condição</i><strong>]]</strong>
+                <strong>do
+                    .
+                    .
+                    .
+                done    </strong>
+                        </pre>
+                </ol>
+            <li><strong>Expressões Aritméticas</strong></li>
+                <p>Para realizar cálculos pelo shell, é necessário o uso do <strong>$(())</strong>, onde operadores específicos são usados no lugar dos sinais em caso de igualdade, onde:</p>
+                <pre>
+            = = <strong>-eq</strong>
+            
+            != = <strong>-ne</strong>
+            
+            menor = <strong>-lt</strong>
+            
+            menor igual = <strong>-le</strong>
+            
+            maior = <strong>-gt</strong>
+            
+            maior igual = <strong>-ge</strong>
+                </pre>
+            <li><strong>Casos</strong></li>
+                <p>O comando <strong>case</strong> possui uma funcionalidade semelhante ao do comando <strong>if</strong>, onse caso algo seja válido, o comando procederá. O <strong>case</strong> é usado quando mais de uma opção são sugeridas, como por exemplo, em um MENU, onde o usuário pode escolher N opções para prosseguir. Diante disso, é realizado um <strong>case</strong> com todas as opções presentes nesse MENU.</p>
+                <pre>
+            <strong>case ${</strong><i>variável</i><strong>} in</strong>
+            <i>caso 1</i><strong>)
+                .
+                .
+                .
+            ;;    </strong>
+            <i>case 2</i><strong>)
+                .
+                .
+                .
+            ;;
+            esac</strong>
+                </pre>
+            <li><strong>Janelas Gráficas</strong></li>
+                <p>Através de um programa no linux, o <strong>zenity</strong> e a manipulação no script, é possível criar janelas interativas em seu programa, de forma a ficar mais dinâmica a interação do usuário com o programa, como caixas de diálogo, opções e etc.
+                </p>
+                <ol>
+                    <br>
+                    <strong><li>O programa</li></strong>
+                        <p>Normalemnte, este programa já vem instalado por padrão no Linux. Para saber se o programa se encontra em sua distribuição, use do comando:</p>
+                        <pre>
+                    <i>zeniti </i><strong>--version</strong>
+                        </pre>
+                        <p>Caso o programa não se encontre instalado na distribuição em questão, instale0o através do comando:</p>
+                        <pre>
+                    <strong>sudo aot-get install</strong> <i>zenity</i>
+                        </pre>
+                    <br>
+                    <strong><li>Sintaxe</li></strong>
+                        <p>A sintaxe básica para o seu uso no script é:</p>
+                        <pre>
+                    <strong>zenity</strong> <i>OpçõesComuns TipoDialogo OpçõesEspeciais</i>
+                        </pre>
+                    <br>
+                    <strong><li>Caixas de diálogo</li></strong>
+                        <ol>
+                            <br>
+                            <li>Calendar</li>
+                            <br>
+                            <li>File Selection</li>
+                            <br>
+                            <li>List</li>
+                            <br>
+                            <li>Notification Icon</li>
+                            <br>
+                            <li>Password Entry</li>
+                            <br>
+                            <li>Text Information</li>
+                            <br>
+                            <li>Color Selection</li>
+                            <br>
+                            <li>SEALE</li>
+                            <br>
+                            <li>Message</li>
+                            <br>
+                            <li>Progress</li>
+                                <ul>
+                                    <li>error</li>
+                                    <li>information</li>
+                                    <li>question</li>
+                                    <li>warning</li>
+                                </ul>
+                            <br>
+                            <li>Text Entry</li>
+                        </ol>
+                    <br>
+                    <strong><li>Códigos de Saída</li></strong>
+                        <p>Ao interagir com a interface, códigos serão retornados ao programa e entre eles:</p>
+                        <ul>
+                            <li>0 = Pressionou o botão OK ou FECHAR</li>
+                            <li>1 = Pressionou CANCELAR ou usou das funções da janela para fechar o diálogo</li>
+                            <li>-1 = Erro inesperado</li>
+                            <li>5 = Time out</li>
+                        </ul>
+                    <br>
+                    <strong><li>Opções comuns</li></strong>
+                        <p>As caixas de diálogo, suportam as seguintes opções</p>
+                        <pre>
+            <strong>-title</strong> = <i>titulo</i> ---> Específica o título na caixa.
+
+            <strong>-window-icon</strong> = <i>ícone</i> ---> Especifíca o ícone que será exibido (existem 4: info, warning, question e error).
+
+            <strong>-width</strong> = <i>tamanho</i> ---> Especifíca a lagura da caixa.
+
+            <strong>-height</strong> = <i>tamanho</i> ---> Especifíca a altura da caixa.
+
+            <strong>-timeout</strong> = <i>tempo</i> ---> Especifíca o tempo de timeout para fechar a caixa (em segundos). 
+                        </pre>
+                </ol>
+        </ul>
+    </body>
+</html>
